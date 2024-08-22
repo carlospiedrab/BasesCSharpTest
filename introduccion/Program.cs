@@ -100,10 +100,37 @@ Persona persona = new Persona()
     Nombres = "Carlos",
     Apellidos = "Piedra",
     Genero = Genero.Masculino,
-    Edad = 40
+    Edad = 40,
+    Direccion = new Direccion()
+    {
+        Numero = "123",
+        NombreCalle = "El Oro",
+        Ciudad = "Gye",
+        Pais = "Ecuador"
+    }
 };
 
-Console.WriteLine($"La Persona: {persona.NombreCompleto} de genero {persona.Genero} y de edad {persona.Edad}");
+Console.WriteLine($"La Persona: {persona.NombreCompleto} de genero {persona.Genero} {persona.Direccion.DireccionCompleta}");
 
+Empleado empleado = new Empleado()
+{
+    Id = 3,
+    Apellidos = "Toledo",
+    Nombres = "Sara",
+    Direccion = new Direccion()
+    {
+        Numero = "29",
+        NombreCalle = "Gomez Rendon",
+        Ciudad = "Guayaquil",
+        Pais = "Ecuador"
+    },
+    NumeroEmpleado = Guid.NewGuid(),
+    FechaIngreso = new DateOnly(2020, 1, 1),
+    Salario = 2000
+};
 
+Console.WriteLine($"Empleado #: {empleado.NumeroEmpleado}");
+Console.WriteLine($"Nombres #: {empleado.NombreCompleto}");
+Console.WriteLine($"Nombres #: {empleado.Direccion.DireccionCompleta}");
+Console.WriteLine($"Años de Antiguedad #: {empleado.Antiguedad}");
 

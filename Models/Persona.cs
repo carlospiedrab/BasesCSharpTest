@@ -23,6 +23,8 @@ namespace Models
         }
         public int Edad { get; set; }
 
+        public Direccion Direccion { get; set; }
+
     }
 
     public enum Genero
